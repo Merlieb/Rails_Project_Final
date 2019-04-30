@@ -1,5 +1,6 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :chrome, screen_size: [1400, 1400]
+  driver = ENV['CHROME_HEADLESS'] == 'false' ? :selenium_chrome : :selenium_chrome_headless
+  driven_by driver, screen_size: [1400, 1400]
 end
