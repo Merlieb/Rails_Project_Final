@@ -1,8 +1,8 @@
-<%= link_to 'All images', images_path %>
+<%= link_to 'All images', images_path, class:"lien" %>
 <h1><%= @image.title %></h1>
  
-<%= image_tag(@image.image.url, alt: 'Image') if @image.image? %>
+<%= image_tag(@image.img.url, alt: 'Image') if @image.img? %>
  
 <p><%= @image.body %></p>
  
-<p><%= link_to 'Edit', edit_image_path(@image) %></p>
+<p><%= link_to 'Edit', edit_image_path(@image) , class: "lien" %></p>
