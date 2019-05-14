@@ -1,37 +1,44 @@
-    
 class ImagesController < ApplicationController
-	def index
-		@images = Image.all
-	end
-
-	def show
-		@image = Image.find(params[:id])
-	end
-
-	def new
-		@image = Image.new
-	end
-
-	def create
-	  @image = Image.new(image_params)
-	  @image.save
-	  redirect_to image_path(@image)
-	end
-
-	def edit
-		@gimage= Image.find(params[:id])
-	end
-
-	def update
-	  @image = Image.find(params[:id])
-	  @image.update(image_params)
-	  redirect_to image_path(@image)
-	end
-
-	private
-
-	def image_params
-		 params.require(:image).permit(:images_url)
-		 
+  before_action :set_image, only: [:show, :edit, :update]
+ 
+  def index
+    @images = Image.order('created_at DESC')
+  end
+ 
+  def show
+  end
+ 
+  def new
+    @image = Image.new
+  end
+ 
+  def create
+    @image = Image.new(image_params)
+    if @image.save
+      redirect_to images_path
+    else
+      render :new
     end
+  end
+ 
+  def edit
+  end
+ 
+  def update
+    if @image.update_attributes(image_params)
+      redirect_to image_path(@image)
+    else
+      render :edit
+    end
+  end
+ 
+  private
+ 
+  def image_params
+    params.require(:image).permit(:title, :body, :img)
+  end
+ 
+  def set_image
+    @image = Image.find(params[:id])
+  end
 end

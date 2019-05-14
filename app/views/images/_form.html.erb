@@ -1,0 +1,18 @@
+<%= form_for image do |f| %>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+   
+    <div>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </div>
+   
+    <div>
+      <%= f.label :img %>
+      <%= f.file_field :img %>
+    </div>
+   
+    <%= f.submit %>
+  <% end %>

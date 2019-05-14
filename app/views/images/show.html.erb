@@ -1,0 +1,8 @@
+<%= link_to 'All images', images_path %>
+<h1><%= @image.title %></h1>
+ 
+<%= image_tag(@image.image.url, alt: 'Image') if @image.image? %>
+ 
+<p><%= @image.body %></p>
+ 
+<p><%= link_to 'Edit', edit_image_path(@image) %></p>

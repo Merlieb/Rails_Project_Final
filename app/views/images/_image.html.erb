@@ -1,0 +1,6 @@
+<h2><%= link_to image.title, image_path(image) %></h2>
+ 
+<p><%= truncate(image.body, length: 150) %></p>
+ 
+<p><%= link_to 'Edit', edit_image_path(image) %></p>
+<hr>

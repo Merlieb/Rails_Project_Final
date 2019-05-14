@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :images
+
+  root to: 'images#index'
 end
