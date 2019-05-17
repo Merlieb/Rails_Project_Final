@@ -1,0 +1,15 @@
+<%= f.label :img %>
+<%= f.file_field :img %><br>
+<%= f.hidden_field :img_cache %>
+
+<% if image.img? %>
+    <%= image_tag image.img.thumb.url %>
+    <div>
+      <%= label_tag :remove_img do %>
+        Remove image
+        <%= f.check_box :remove_img %>
+      <% end %>
+    </div>
+<% end %>
+<%= f.text_field :remote_img_url %>
+<small>Enter URL to an image</small>

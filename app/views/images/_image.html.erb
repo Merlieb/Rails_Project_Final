@@ -3,4 +3,5 @@
 <p><%= truncate(image.body, length: 150) %></p>
  
 <p><%= link_to 'Edit', edit_image_path(image), class:"lien"%></p>
-<hr>
+<p><%= link_to 'Delete', image, method: :delete, data: { confirm: 'sure?'}, class:"lien"%></p>
+<br>
