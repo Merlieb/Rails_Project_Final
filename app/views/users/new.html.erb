@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+       <h2>New User</h2>
+
+        <form action="../images/new" style="border:1px solid #ccc">
+            <label for="username"><b>Name:</b></label> <br>
+            <input type="text" name="username" placeholder="Enter your Name">
+            <br>
+            <br>
+            <label for="email"><b>Email:</b></label> <br>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            <br>
+            <br>
+            <label for="psw"><b>Password:</b></label><br>
+            <input type="password" placeholder="Enter Password" name="password" id="myInput">
+            <input type="checkbox" onclick="myFunction()">Show Password
+
+            <script>
+            function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+            }
+            </script>
+
+            <br><br>
+            <input type="submit" value="Submit">
+        </form> 
+    </body>
+</html>
